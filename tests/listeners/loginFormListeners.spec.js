@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("login", () => {
   test("user can login with valid credentials", async ({ page }) => {
-    await page.goto("/auth/login");
+    await page.goto("/login/index.html");
 
     await page.locator('input[name="email"]').fill(process.env.TEST_USER_EMAIL);
     await page
@@ -17,7 +17,7 @@ test.describe("login", () => {
   test("an error message is shown with invalid credential", async ({
     page,
   }) => {
-    await page.goto("/auth/login");
+    await page.goto("/login/index.html");
 
     await page.locator('input[name="email"]').fill(process.env.TEST_USER_EMAIL);
     await page.locator('input[name="password"]').fill("jdhufofnfdfh");
